@@ -1,0 +1,14 @@
+name: DepLink
+title: DepLink
+username:
+account: chenlabgccri
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 5349086
+bundleId: 5395859
+url: https://chenlabgccri.shinyapps.io/DepLink/
+when: 1640064282.2538
+lastSyncTime: 1640064282.25381
+asMultiple: FALSE
+asStatic: FALSE
+ignoredFiles: Google_Analyst.html

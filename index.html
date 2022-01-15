@@ -1,0 +1,1679 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        {{ headContent() }}
+        <meta charset="utf-8">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+        <title>Deplink</title>
+        <link href="assets/img/favicon.png" rel="icon">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+        
+        <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+        <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+        <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+        <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+        <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+        <link href="assets/css/magnific-popup.css" rel="stylesheet">
+        <link href="assets/css/style.css" rel="stylesheet">
+    </head>
+    <body>
+        <script>
+            //function to hide and show individual pages
+            function SwitchTo(num){
+                if(num == 1){
+                   $('#indexdiv').show().trigger('shown');
+                   $('#aboutdiv').hide().trigger('hidden');
+                   $('#genediv').hide().trigger('hidden');
+                   $('#drugdiv').hide().trigger('hidden');
+                   $('#contactdiv').hide().trigger('hidden');
+                }else if (num == 2){
+                    $('#indexdiv').hide().trigger('hidden');
+                   $('#aboutdiv').show().trigger('shown');
+                   $('#genediv').hide().trigger('hidden');
+                   $('#drugdiv').hide().trigger('hidden');
+                   $('#contactdiv').hide().trigger('hidden');
+                }else if (num == 3){
+                    $('#indexdiv').hide().trigger('hidden');
+                   $('#aboutdiv').hide().trigger('hidden');
+                   $('#genediv').show().trigger('shown');
+                   $('#drugdiv').hide().trigger('hidden');
+                   $('#contactdiv').hide().trigger('hidden');
+                }else if (num == 4){
+                    $('#indexdiv').hide().trigger('hidden');
+                   $('#aboutdiv').hide().trigger('hidden');
+                   $('#genediv').hide().trigger('hidden');
+                   $('#drugdiv').show().trigger('shown');
+                   $('#contactdiv').hide().trigger('hidden');
+                }else if (num == 5){
+                    $('#indexdiv').hide().trigger('hidden');
+                   $('#aboutdiv').hide().trigger('hidden');
+                   $('#genediv').hide().trigger('hidden');
+                   $('#drugdiv').hide().trigger('hidden');
+                   $('#contactdiv').show().trigger('shown');
+                }
+                
+                $('.open-popup-link').magnificPopup({
+                    type: 'inline',
+                    mainClass: 'mfp-fade'
+                });
+         }
+         
+
+        </script>
+
+        <!-- HOME PAGE-->
+        <div id="indexdiv">
+        <header id="header" class="fixed-top d-flex align-items-center">
+            <div class="container d-flex align-items-center">
+            <div class="logo me-auto">
+                <h1><a href="#" onclick="SwitchTo(1)">Deplink</a></h1>
+            </div>
+                <nav id="navbar" class="navbar order-last order-lg-0 m-auto">
+                    <ul>
+                        <li>
+                            <a class="nav-link" href="#" onclick="SwitchTo(1)" style="text-decoration-line: underline; text-decoration-color: deepskyblue; text-decoration-thickness: 0.5vh;">Home</a>
+                        </li> 
+                        <li>
+                            <a class="nav-link" href="#" onclick="SwitchTo(2)">About</a>
+                        </li>
+                        <li class="dropdown"><a href="#"><span>Genes</span> <i class="bi bi-chevron-down"></i></a>
+                                <ul>
+                                    <li><a class="nav-link" href="#" onclick="SwitchTo(3)">Query Gene</a></li>
+                                    <li><a class="scrollto" href="#geneList" onclick="SwitchTo(3)">Gene List</a></li>
+                                </ul>  
+                        </li>
+                        <li class="dropdown"><a href="#"><span>Drugs</span> <i class="bi bi-chevron-down"></i></a>
+                            <ul>
+                                <li><a class="nav-link" href="#" onclick="SwitchTo(4)">Query Drug</a></li>
+                                <li><a class="scrollto" href="#newDrug" onclick="SwitchTo(4)">New Drug</a></li>
+                            </ul>  
+                        </li>   
+                        
+                        <li>
+                            <a class="nav-link" href="#" onclick="SwitchTo(5)">Contact</a>
+                        </li>
+                    </ul>
+                    <i class="bi bi-list mobile-nav-toggle"></i>
+                </nav>
+            </div>
+        </header>
+        
+
+        <!-- title section -->
+        <section id="hero" class="d-flex flex-column justify-content-center align-items-center">
+        <div class="container text-center text-md-left" data-aos="fade-up">
+            <h1>Welcome to <span>Deplink</span></h1>
+            <h2>A project to systematically link genetic and pharmacologic dependencies of cancer</h2>
+            <a href="#services" class="btn-get-started scrollto">Explore</a>
+        </div>
+        </section>
+
+        <section id="about" class="about">
+            <div class="container">
+            <br>
+            <div class="section-title">
+                <h1 style="color:midnightblue;">Introduction</h1>
+                <h1 ::after style="content: '';
+                align-self: center;
+                position:relative;
+                display:block;
+                width: 100%;
+                height: 3px;
+                background: #3498db;
+                bottom: 0;
+                "></h1>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-lg-12 pt-4 pt-lg-0">
+                    <h5 style="text-align: center;">
+                        DepLink identifies genetic perturbations (gene knockouts) and pharmacologic perturbations (drug treatments) that induce similar changes in cancer cell viability or gene expression profiles.
+                    </h5>
+                    <ul>
+                        <li><i class="bx bx-question-mark"></i>Which drugs can be potential surrogates to knockout of a gene in cancer cells?</li>
+                        <li><i class="bx bx-question-mark"></i>Which genes are potential targets or mechanisms of action (MOA) of a drug?</li>
+                    </ul>
+                </div>
+            </div>            
+            <br>
+            <div class="row">
+                <div class="col-lg-12">
+                <img src="assets/img/deplink_graphic_abstract.png" class="img-fluid" alt="" style="animation: FadeIn 1s ease-in-out;">
+                </div>
+            </div>
+            
+    
+            </div>
+        </section>
+        
+
+        <br>
+        <br>
+        
+        <section id="counts" class="counts">
+            <div class="container">
+    
+            <div class="row">
+    
+                <div class="col-lg-3 col-6">
+                <div class="count-box">
+                    <i>B</i>
+                    <span data-purecounter-start="0" data-purecounter-end="17078" data-purecounter-duration="2" class="purecounter"></span>
+                    <p>Broad Genes</p>
+                </div>
+                </div>
+    
+                <div class="col-lg-3 col-6">
+                <div class="count-box">
+                    <i>S</i>
+                    <span data-purecounter-start="0" data-purecounter-end="17078" data-purecounter-duration="2" class="purecounter"></span>
+                    <p>Sanger Genes</p>
+                </div>
+                </div>
+    
+                <div class="col-lg-3 col-6 mt-5 mt-lg-0">
+                <div class="count-box">
+                    <i>P</i>
+                    <span data-purecounter-start="0" data-purecounter-end="4686" data-purecounter-duration="2" class="purecounter"></span>
+                    <p>PRISM drugs</p>
+                </div>
+                </div>
+    
+                <div class="col-lg-3 col-6 mt-5 mt-lg-0">
+                <div class="count-box">
+                    <i>G</i>
+                    <span data-purecounter-start="0" data-purecounter-end="397" data-purecounter-duration="2" class="purecounter"></span>
+                    <p>GDSC drugs</p>
+                </div>
+                </div>
+    
+            </div>
+    
+            </div>
+        </section>
+        <!-- End of Title Section-->
+
+        <!-- Functions Section -->
+        <section id="services" class="services section-bg">
+            <div class="container">
+    
+            <div class="section-title">
+                <h1 style="color:midnightblue;">Functions</h1>
+                <p>Deplink offers a variety of options to observe genetic and pharmaceutical perturbations on cancer</p>
+                <p>Click the links below to get started</p>
+            </div>
+    
+            <div class="row">
+                <div class="col-md-6">
+                <div class="icon-box">
+                    <i class="bi bi-segmented-nav" style="color:blueviolet;"></i>
+                    <h4><a href="#" onclick="SwitchTo(4)">Drug Dependencies</a></h4>
+                    <p>Find and Analyze gene knockouts and drug treatments with similar perturbation effects as the selected drug</p>
+                </div>
+                </div>
+                <div class="col-md-6 mt-4 mt-lg-0">
+                <div class="icon-box">
+                    <i class="bi bi-fingerprint" style="color: springgreen;"></i>
+                    <h4><a href="#" onclick="SwitchTo(3)">Gene Dependencies</a></h4>
+                    <p>Find and Analyze gene knockouts and drug treatments with similar perturbation effects as the selected gene</p>
+                </div>
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-md-6">
+                <div class="icon-box">
+                    <i class="bi bi-card-list" style="color:crimson;"></i>
+                    <h4><a class="scrollto" href="#geneList" onclick="SwitchTo(3)">Gene List</a></h4>
+                    <p>Observe distributions of dependencies among multiple genes at a time and search for drug coperturbances</p>
+                </div>
+                </div>
+                <div class="col-md-6 mt-4 mt-lg-0">
+                <div class="icon-box">
+                    <i class="bi bi-intersect" style="color:rgb(236, 250, 34);"></i>
+                    <h4><a class="scrollto" href="#newDrug" onclick="SwitchTo(4)">New Compounds</a></h4>
+                    <p>Locate known drugs sharing similar biochemical features with a new compound using SMILE code</p>
+                </div>
+                </div>
+            </div>
+            <br>
+            <div class="row justify-content-center">
+                <div class="col-md-6">
+                <div class="icon-box">
+                    <i class="bi bi-info-square"></i>
+                    <h4><a href="#" onclick="SwitchTo(2)">Help</a></h4>
+                    <p>Learn about the full range of Deplink's functions and how to utilize them</p>
+                </div>
+                </div>
+            </div>
+            </div>
+        </section>
+        <!-- End of Functions Section -->
+
+        <footer id="footer" style="box-shadow: 0px 0px 10px 0px rgba(1, 1, 82, 0.4); display: flex;">
+            <div class="container d-md-flex" style="padding-top: 10px; padding-bottom: 3px;">
+                <div class="text-md-left" style="width: 50%; float: left;">
+                    <h3 style="font-size: 20px; padding-top: 5px;">University of Texas Health San Antonio</h3>
+                    <h4 style="font-size: 15px;">Greehey Children's Cancer Research Institute</h4>
+                </div>
+                <div>
+                    <img src="uthsa_logo.png" style="width:200px; height: 50px; object-fit: contain; padding-top: 5px;">
+                </div>
+                <div class="text-center text-md-right"style="padding-top: 40px; width: 50%; float: right;">
+                    <h3 style="font-size: 1vh; padding-left: 60%;">Version: 1.0 (2021.12.10) Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a></h3>
+                </div>
+            </div>
+
+        </footer>
+       
+        </div>
+        <!-- End of Home Page -->
+
+        <!-- About Page-->
+        <div id="aboutdiv" style="display: none;">
+
+         <header id="header" class="fixed-top d-flex align-items-center">
+            <div class="container d-flex align-items-center">
+            <div class="logo me-auto">
+                <h1><a href="#" onclick="SwitchTo(1)">Deplink</a></h1>
+            </div>
+                <nav id="navbar" class="navbar order-last order-lg-0 m-auto">
+                    <ul>
+                        <li>
+                            <a class="nav-link" href="#" onclick="SwitchTo(1)">Home</a>
+                        </li> 
+                        <li>
+                            <a class="nav-link" href="#" onclick="SwitchTo(2)" style="text-decoration-line: underline; text-decoration-color: deepskyblue; text-decoration-thickness: 0.5vh;">About</a>
+                        </li>
+                        <li class="dropdown"><a href="#"><span>Genes</span> <i class="bi bi-chevron-down"></i></a>
+                            <ul>
+                                <li><a class="nav-link" href="#" onclick="SwitchTo(3)">Query Gene</a></li>
+                                <li><a class="scrollto" href="#geneList" onclick="SwitchTo(3)">Gene List</a></li>
+                            </ul>  
+                        </li>
+                        <li class="dropdown"><a href="#"><span>Drugs</span> <i class="bi bi-chevron-down"></i></a>
+                            <ul>
+                                <li><a class="nav-link" href="#" onclick="SwitchTo(4)">Query Drug</a></li>
+                                <li><a class="scrollto" href="#newDrug" onclick="SwitchTo(4)">New Drug</a></li>
+                            </ul>  
+                        </li>   
+                        <li>
+                            <a class="nav-link" href="#" onclick="SwitchTo(5)">Contact</a>
+                        </li>
+                    </ul>
+                    <i class="bi bi-list mobile-nav-toggle"></i>
+                </nav>
+            </div>
+        </header>
+      
+
+        <section id="about" class="about" style="margin-top: 70px;">
+            <div class="container">
+            <br>
+            <div class="section-title">
+                <h1 style="color:midnightblue;"><b>Deplink</b> Manual</h1>
+                <h1 ::after style="content: '';
+                align-self: center;
+                position:relative;
+                display:block;
+                width: 100%;
+                height: 3px;
+                background: #3498db;
+                bottom: 0;
+                "></h1>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-lg-12 pt-4 pt-lg-0">
+                    <h5 style="text-align: center;">
+                        DepLink is an interactive tool that enables users to match gene knockouts and drug treatments that induce similar changes in cell viability and gene expression profiles.
+                    </h5>
+                    <ul>
+                        <li><i class="bx bx-radio-circle"></i>Deplink aims to create an interactive and comprehensive link between genes, drugs, and their perturbations on cancer cell lines</li>
+                        <li><i class="bx bx-radio-circle"></i>Users can start their search from a gene of interest, a set of genes, a drug of interest, or SMILES code of a new drug.</li>
+                        <li><i class="bx bx-radio-circle"></i>Users can rank, interpret, and visualize effects of gene/drug perturbations using our interactive figures and annotated data tables.</li>
+                    </ul>
+                </div>
+            </div>                 
+    
+            </div>
+        </section>
+
+        <!-- Data Links Section-->
+        <section id="what-we-do" class="what-we-do">
+            <div class="container">
+    
+            <div class="section-title">
+                <h2>Data Links</h2>
+                <p>The server incorporates 5 large-scale datasets</p>
+            </div>
+    
+            <div class="row justify-content-center">
+                <div class="col-lg-2 col-md-6 d-flex align-items-stretch">
+                <div class="icon-box">
+                    <div class="icon"><i style="font-size: 20px;">Gene</i></div>
+                    <h4><a href="https://depmap.org/portal/" target="_blank">Broad Depmap</a></h4>
+                    <p>CRISPR gene knockout efficacies on cancer cell lines from Broad Institute</p>
+                </div>
+                </div>
+    
+                <div class="col-lg-2 col-md-6 d-flex align-items-stretch mt-4 mt-md-0">
+                <div class="icon-box">
+                    <div class="icon"><i style="font-size: 20px;">Gene</i></div>
+                    <h4><a href="https://depmap.sanger.ac.uk/" target="_blank">Sanger Depmap</a></h4>
+                    <p>CRISPR gene knockout efficacies on cancer cell lines from Sanger Institute</p>
+                </div>
+                </div>
+    
+                <div class="col-lg-2 col-md-6 d-flex align-items-stretch mt-4 mt-lg-0">
+                <div class="icon-box">
+                    <div class="icon"><i style="font-size: 20px;">Drug</i></div>
+                    <h4><a href="https://www.theprismlab.org/" target="_blank">PRISM Screen</a></h4>
+                    <p>High throughput drug efficacy screen on cancer cell lines from PRISM</p>
+                </div>
+                </div>
+
+                <div class="col-lg-2 col-md-6 d-flex align-items-stretch mt-4 mt-lg-0">
+                    <div class="icon-box">
+                        <div class="icon"><i style="font-size: 20px;">Drug</i></div>
+                        <h4><a href=" https://www.cancerrxgene.org/" target="_blank">GDSC Screen</a></h4>
+                        <p>High throughput drug efficacy screen on cancer cell lines from GDSC</p>
+                    </div>
+                    </div>
+
+                <div class="col-lg-2 col-md-6 d-flex align-items-stretch mt-4 mt-lg-0">
+                <div class="icon-box">
+                    <div class="icon"><i style="font-size: 20px;">Map</i></div>
+                    <h4><a href="https://lincsproject.org/LINCS/centers/data-and-signature-generating-centers/lincs-transcriptomics" target="_blank">LINCS Cmap</a></h4>
+                    <p>LINCS next generation connectivity map of molecular and perturbation signatures</p>
+                </div>
+                </div>
+    
+            </div>
+            
+           
+            </div>
+        </section>
+        <!-- End Data Links Section -->
+
+        <section id="services" class="services section-bg" style="background-color: #fff;">
+            <div class="container">
+    
+            <div class="section-title"> 
+                <h1 style="color:midnightblue;">Schematic Flowchart</h1>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                <img src="assets/img/Figure1_v1-03.png" class="img-fluid" alt="" style="animation: FadeIn 1s ease-in-out;">
+                </div>
+            </div>
+            
+            </div>
+        </section>
+
+        <!-- Data Information -->
+        <section id="testimonials" class="testimonials section-bg">
+            <div class="container">
+    
+            <div class="section-title">
+                <h2>Data Source and Preprocessing</h2>
+                <p>This section describes in brief the data sources and pre-processing methods used to organize the data.</p>
+            </div>
+    
+            <div class="testimonials-slider swiper" data-aos="fade-up" data-aos-delay="100">
+                <div class="swiper-wrapper">
+    
+                <div class="swiper-slide">
+                    <div class="testimonial-item" style="height: 60vh;">
+                    <h3>Cell Line Annotations</h3>
+                    <br>
+                    <p>
+                        The access cell line information sample_info.csv file from DepMap Public 21Q3 was downloaded. 
+                        The 21Q3 version of this file was used as it encompassed information of 2944 cell line IDs. 
+                        This file was used to identify cell line IDs based on tumor type and 29 unique primary tumor type were 
+                        identified for DepLink.
+                    </p>
+                    <div class="icon" style="position: absolute; bottom: 30px; left: 40%; right: 40%;"><a href="https://depmap.org/portal/download/" target="_blank"><i class="bx bx-download" style="font-size: 20px;"></i></a></div>
+                    </div>
+                </div>
+
+                <div class="swiper-slide">
+                <div class="testimonial-item" style="height: 60vh;">
+                    <h3>Broad Data</h3>
+                    <br>
+                    <p>
+                        CRISPR_gene_effect.csv was downloaded and preprocessed to 
+                        generate R data frames with rows corresponding to gene symbols and columns 
+                        corresponding to unique cell line IDs. We then excluded NA or failed cell lines 
+                        and edited the rows to only include gene symbols. 
+                    </p>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <div class="icon" style="position: absolute; bottom: 30px; left: 40%; right: 40%;"><a href="https://depmap.org/portal/download/" target="_blank"><i class="bx bx-download" style="font-size: 20px;"></i></a></div>
+                    <br>
+                    </div>
+                </div>
+
+                <div class="swiper-slide">
+                    <div class="testimonial-item" style="height: 60vh;">
+                        <h3>Sanger Data</h3>
+                        <br>
+                        <p>
+                            gene_effect.csv was downloaded and preprocessed similarly to the Broad data 
+                            (removing invalid column and changing the rows to only include gene symbols) 
+                            In addition, the data was intersected to
+                            only include common gene ids among both data files. 
+                        </p>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <div class="icon" style="position: absolute; bottom: 30px; left: 40%; right: 40%;"><a href="https://depmap.org/portal/download/" target="_blank"><i class="bx bx-download" style="font-size: 20px;"></i></a></div>
+                        <br>
+                        </div>
+                    </div>
+
+                <div class="swiper-slide">
+                    <div class="testimonial-item" style="height: 60vh;">
+                        <h3>GDSC Data</h3>
+                        <br>
+                        <p>
+                            From GDSC, dose response expressing cell viabilities from drug compounds in both GDSC1 and GDSC2 were downloaded.
+                            This file was preprocessed to generate R data frames for log10-transformed half maximal inhibitory (IC50) values, 
+                            where rows correspond to unique cell lines IDs and columns corresponding to 13-digit drug BRD IDs. 
+                            If GDSC1 and GDSC2 reported findings on the same drug, IC50 values from one was selected for representational purposes.
+                        </p>
+                        <br>
+                        <div class="icon" style="position: absolute; bottom: 30px; left: 40%; right: 40%;"><a href="https://depmap.org/portal/download/" target="_blank"><i class="bx bx-download" style="font-size: 20px;"></i></a></div>
+                        <br>
+                        </div>
+                    </div>
+
+                <div class="swiper-slide">
+                    <div class="testimonial-item" style="height: 60vh;">
+                        <h3>PRISM Data</h3>
+                        <br>
+                        <p>
+                            From PRISM dataset only chemically perturbed cell viability screens expressed via logfold change values were downloaded. 
+                            This file was preprocessed to generate R data frame with rows corresponding to unique cell line IDs and columns corresponding to 22-digit BRD IDs. 
+                            We excluded NAs and only included BRD ids/ drug names for drug columns. 
+                        </p>
+                        <br>
+                        <br>
+                        <br>
+                        <div class="icon" style="position: absolute; bottom: 30px; left: 40%; right: 40%;"><a href="https://depmap.org/portal/download/" target="_blank"><i class="bx bx-download" style="font-size: 20px;"></i></a></div>
+                        </div>
+                    </div>
+
+
+                <div class="swiper-slide">
+                <div class="testimonial-item" style="height: 60vh;">
+                    <h3>LINCS Data</h3>
+                    <br>
+                    <p>
+                        Phase I molecular signatures by Broad Institute (GSE92742_Broad_LINCS_Level5_COMPZ. MODZ_n473647x12328.gctx.gz)
+                        were used to determine gene expression caused by drug perturbation effects. We used this data for inferential statistics
+                        and to find drugs perturbing a set of genes.
+                    </p>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <div class="icon" style="position: absolute; bottom: 30px; left: 40%; right: 40%;"><a href="https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE92742" target="_blank"><i class="bx bx-download" style="font-size: 20px;"></i></a></div>
+                    <br>
+                    </div>
+                </div>
+
+                
+    
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
+    
+            </div>
+        </section>
+        <!-- end of Data Info -->
+
+        <footer id="footer" style="box-shadow: 0px 0px 10px 0px rgba(1, 1, 82, 0.4); display: flex;">
+            <div class="container d-md-flex" style="padding-top: 10px; padding-bottom: 3px;">
+                <div class="text-md-left" style="width: 50%; float: left;">
+                    <h3 style="font-size: 20px; padding-top: 5px;">University of Texas Health San Antonio</h3>
+                    <h4 style="font-size: 15px;">Greehey Children's Cancer Research Institute</h4>
+                </div>
+                <div>
+                    <img src="uthsa_logo.png" style="width:200px; height: 50px; object-fit: contain; padding-top: 5px;">
+                </div>
+                <div class="text-center text-md-right"style="padding-top: 40px; width: 50%; float: right;">
+                    <h3 style="font-size: 1vh; padding-left: 60%;">Version: 1.0 (2021.12.10) Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a></h3>
+                </div>
+            </div>
+
+        </footer>
+     
+        </div>
+        <!-- End of About Page-->
+
+        <!-- Gene and Gene list Query-->
+        <div id="genediv" style="display: none;">
+       
+         <header id="header" class="fixed-top d-flex align-items-center">
+            <div class="container d-flex align-items-center">
+            <div class="logo me-auto">
+                <h1><a href="#" onclick="SwitchTo(1)">Deplink</a></h1>
+            </div>
+                <nav id="navbar" class="navbar order-last order-lg-0 m-auto">
+                    <ul>
+                        <li>
+                            <a class="nav-link" href="#" onclick="SwitchTo(1)">Home</a>
+                        </li> 
+                        <li>
+                            <a class="nav-link" href="#" onclick="SwitchTo(2)" >About</a>
+                        </li>
+                        <li class="dropdown"><a href="#" style="text-decoration-line: underline; text-decoration-color: deepskyblue; text-decoration-thickness: 0.5vh;"><span>Genes</span> <i class="bi bi-chevron-down"></i></a>
+                            <ul>
+                                <li><a class="nav-link" href="#" onclick="SwitchTo(3)">Query Gene</a></li>
+                                <li><a class="scrollto" href="#geneList" onclick="SwitchTo(3)">Gene List</a></li>
+                            </ul>  
+                        </li>
+                        <li class="dropdown"><a href="#"><span>Drugs</span> <i class="bi bi-chevron-down"></i></a>
+                            <ul>
+                                <li><a class="nav-link" href="#" onclick="SwitchTo(4)">Query Drug</a></li>
+                                <li><a class="scrollto" href="#newDrug" onclick="SwitchTo(4)">New Drug</a></li>
+                            </ul>  
+                        </li>   
+                        <li>
+                            <a class="nav-link" href="#" onclick="SwitchTo(5)">Contact</a>
+                        </li>
+                    </ul>
+                    <i class="bi bi-list mobile-nav-toggle"></i>
+                </nav>
+            </div>
+        </header>
+
+        <section id="geneQuery" class="d-flex flex-column justify-content-center align-items-center" 
+        style="background: url('assets/img/gene_query.jpg') center center; background-size: cover; margin-top: 70px; height: 20vh;">
+            <div class="container text-center text-md-right" data-aos="fade-up" style="display: flex;">
+                <div class="row" style="justify-content:space-between;">
+                    <div style="width: 80%;">
+                        <h1 style="margin: 0 0 10px 0; font-size: calc(2vh + 2vw); font-weight: 700;line-height: 56px;
+                        color: #fff;">Query A Gene &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp;</h1>
+                    </div>
+                    <div style="padding-top: 10px; width: 20%;">
+                        <a id="info1" href="#helptab1" class="open-popup-link" style="font-family: 'Poppins', sans-serif;
+                        font-weight: 400;
+                        font-size: 13px;
+                        letter-spacing: 2px;
+                        display: inline-block;
+                        padding: 12px 28px;
+                        border-radius: 4px;
+                        transition: ease-in-out 0.3s;
+                        color: #fff;
+                        background:darkviolet;
+                        text-transform: uppercase;">Info</a>
+                    </div>
+                </div>     
+            </div>
+        </section>
+      
+        <div id="helptab1" class="white-popup mfp-hide">
+            <h1 style="text-align: center;">Manual for Module 1 - Query a Gene</h1>
+            <hr />
+            <p style="text-align: left;">&nbsp;<strong>Module 1: Finding a drug treatment with similar pertubation effects to a gene knockout</strong></p>
+            <p style="text-align:left;"> <img src="DepLink_Help_Modules-01.png" height="80"></p>
+            <p style="text-align: left;">To start  ‘Module 1: Query a Gene’, the user should enter an official Gene Symbol, such as CDK6, and select Cancer Type either "PanCan" (default option) or a specific cancer type (from the drop-down menu list). After which, the user should click on the orange button indicating <font color = "blue"> <strong> [Submit] </strong></font> to initiate the query function.</p>
+                
+            <p style="text-align:left;"><em> <u>Distributions of gene dependencies</u> </em></p>
+
+            <p style="text-align:left;"> The first function of the gene query module takes gene symbol as an input, examines the dependency score (gene effect) distribution across  cancer cell lines from DepMap (n = 1054) and Sanger (n = 318) (<strong>Panel 1A</strong>, CRISPR loss-of-function screens). The density plot provides information of all gene effect scores (&lt; -1 indicating strong dependency on the  query gene in cells). A box plot (<strong>Panel 1B</strong>) is automatically generated in a pan-cancer manner that allows the user to visually examine cancer type associations from both Broad (light blue) and Sanger (light orange) DepMap datasets. On further examination of the box plot, user can observe that leukemia, myeloma and lymphoma show distinct dependency on CDK6. Note that cancer types at the bottom of box plot may not display due to the size of box plot in display. The user may resize the window to allow all label to be displayed or hover the cursor over the box plot to visualize the cancer type.</p>
+                
+            <p style="text-align:left;"><em><u> Gene-gene co-dependencies (similar gene knockouts) </u></em></p>
+
+            <p style="text-align:left;">Users can further explore the co-dependency of the query gene (in this case, CDK6) with all other ~17000 genes in both CRISPR screens. Distribution of the Pearson correlation coefficients are plotted in <strong>Panel 1C</strong>. A list of highly co-dependent genes, from both datasets, are reported in <strong>Panel 1D</strong>. For example, the top co-dependent genes to CDK6 include CCND3 and CCND2, both functioning as the regulators of CDKs. To better visualize the gene co-dependencies, an interactive  network is displayed in <strong>Panel 1E </strong>on the query gene and its top 10 co-dependent genes (as ranked in <strong>Panel 1D</strong>; re-ranking Panel 1D by a column updates the network of Panel 1E).&nbsp;Here, the query gene is displayed in the center in blue circle. Connecting edges are color coded to reflect the direction (red: positive correlation, blue: negative correlation) and the width of an edge reflects the magnitude of the correlation coefficient from Broad DepMap screen.</p>
+
+            <p style="text-align:left;"> Users can reorder/constrain the table ( <strong>Panel 1D</strong>) with respect to gene symbol or correlation coefficient values, via "Search" box, and sort each column, the network figure will update accordingly. A scatter plot (<strong>Panel 1F</strong>) between query gene and a top co-dependent gene  will be plotted when the user selects a row (clicking the row  from <strong>Panel 1D</strong>)&nbsp;to visually assess the robustness of co-dependency of two genes.</p>
+
+            Descriptions to columns of <strong>Panel 1D</strong>:
+            <ul>
+            <li> <strong> Gene Name:</strong> Gene symbols</li>
+            <li> <strong> Corr in Broad</strong>: Correlation coefficients to the query gene in the Broad DepMap dataset. The width of the connecting edges in the network uses this column information.</li>
+            <li> <strong> Corr in Sanger:</strong> Correlation coefficients to the query gene from Sanger DepMap dataset.</li>
+            <li> <strong>Max Corr:</strong> Maximum correlation coefficient from Broad and Sanger DepMaps.</li>
+            <li> <strong>Avg Corr:</strong> Average correlation coefficient from Broad and Sanger DepMaps.</li>
+            </ul>
+            <p style="text-align:left;"><em> <u>Gene-drug correlations (drug treatments similar to gene knockouts)</u> </em></p>	
+
+            <p style="text-align:left;">This section   calculate Pearson correlation coefficient between gene dependency of the query gene to drug responses (both PRISM and GDSC drug screens) across PanCan collection or a selected cancer type. As we discuss in the overall manual of DepLink ("Help" from the top bar), PRISM screens measure the viability by fold-changes comparing to control treatment, and GDSC measures the IC50 of a drug. For the example of CDK6, four density distributions of correlation coefficients for   CDK6 (assayed in Broad and Sanger DepMaps) to any drugs in the PRISM and GDSC are generated in <strong>Panel 1G</strong>, which are Broad DepMap vs PRISM, Broad DepMap vs GDSC, Sanger DepMap vs PRISM and Sanger&nbsp;DepMap vs GDSC. <strong>Panel 1H&nbsp; </strong>shows a table of correlation coefficients for all four comparisons. Please note that the results of drugs assayed PRISM and GDSC are represented by different rows, with the first column denoting the corresponding drug screen.&nbsp;&nbsp;</p>
+
+            <p style="text-align:left;">Similar to <strong>Panel 1E</strong>, <strong>Panel 1I</strong> displays the connected  network between the query gene (CDK6, in blue circle) and top 10 correlated drugs (in orange diamond). Also, the connecting edges are coded with correlation coefficient from the Broad DepMap  only. A scatter plot (<strong>Panel 1J</strong>) between query gene and a selected drug is generated when the user selects a row from&nbsp; <strong>Panel 1H</strong> (clicking the row) to visually assess the robustness of gene-drug association using Broad  and Sanger DepMap screens.</p>
+                
+            <p style="text-align:left;">In the case of the querying CDK6, the top correlated drug to CDK6 knockout is the palbociclib from PRISM screen. Palbociclib is a CDK 4/6 inhibitor that blocks certain molecules involved in promoting the growth of cancer cells. CKD4/6 inhibitors are a class of prescription medicines that are used in combination with hormone therapies to treat adults with hormone receptor positive, HER3-negative advanced or metastatic breast cancer. As we illustrated in this module, this query method will enable users to discover drugs that potentially target the query gene.</p>
+            Column description of table in <strong>Panel 1I</strong>,
+            <ul>
+            <li> <strong> Data Source: </strong>Drug screen data  from PRISM or GDSC.</li>
+            <li> <strong> Broad ID:</strong> &nbsp;Broad drug ID if available.</li>
+            <li> <strong> Drug Name:</strong> Common drug name if known.</li>
+            <li> <strong>Corr with Broad: </strong>Correlation coefficient of the query gene (from Broad DepMap CRISPR screen) to the drug screen data. Network connecting edge width uses this column. </li>
+            <li> <strong>Corr with Sanger: </strong>Correlation coefficient of the query gene (from Sanger DepMap CRISPR screen) to the drug screen data.</li>
+            <li> <strong> Max Corr: </strong>Maximum correlation coefficient between <strong>Corr with Broad</strong> and <strong>Corr with Sanger</strong>.</li>
+            <li> <strong> Avg Corr:</strong> Average correlation coefficient between <strong>Corr with Broad</strong> and <strong>Corr with Sanger</strong>.</li>
+            </ul>
+            <hr>
+            <p style="text-align: center;"><span style="color: #000000;">Greehey Children's Cancer Research Institute, The University of Texas Health San Antonio</span></p>
+            <p style="text-align:center;"> <img src="uthsa_logo.png" height="80"></p>
+        </div>
+  
+        
+        <!-- This section is where the output and input names for shiny go -->
+        <!--division 1-->
+        <section style="background-color: #f7fbfe;">
+            <div class="section-title">
+                <h2 style="font-size: 36px; color: navy;"><b>Inputs</b></h2>
+                <p>Input gene and cancer type you want to search for</p>
+            </div>
+            <div style="width: 70%; height: 5px; background-color: navy; margin: auto;">
+            </div>
+            <div class="container">
+                <div class="row justify-content-center" style="padding-top: 2vh;">
+                    {{ geneid }}
+                    {{ cancertype }}
+                </div>
+                <br>
+                <div class="row justify-content-center" style="position:absolute; left:30%; right: 30%;">
+                    {{ submit1 }}
+                    <br>
+                    <br>
+                </div>
+                <br>
+                <br>
+                <br>
+                <div class="row" style="width: 70%; height: 5px; background-color: navy; position: absolute; left: 0; right: 0; margin: auto;">
+                </div>
+                <br>
+                <div class="section-title">
+                    <h2 style="font-size: 36px; color: navy;"><b>Distributions of Gene Dependencies</b></h2>
+                </div>
+                <div class="row justify-content-center">
+                    <div class="col-md-6">
+                        <h4>1A: Dependency Scores Across All Cell Lines <a href="#explain1" class="open-popup-link">
+                            <i class="bi bi-question-circle-fill" style="color:blue;">
+                        </i></a></h4>
+                        {{ genetogeneplot1 }}
+                    </div>
+                    <div class="col-md-6">
+                        <h4>1B: Pan-cancer dependency scores<a href="#explain2" class="open-popup-link">
+                            <i class="bi bi-question-circle-fill" style="color:blue;">
+                        </i></a></h4>
+                        {{ genetogeneplot2 }}
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- division 2-->
+        <section style="background-color: #f7fbfe;">
+            <div class="container">
+                <div class="row" style="width: 70%; height: 5px; background-color: navy; position: absolute; left: 0; right: 0; margin: auto;">
+                </div>
+                <br>
+                <div class="section-title">
+                    <h2 style="font-size: 36px; color: navy;"><b>Gene-gene co-dependencies (similar gene knockouts)</b></h2>
+                </div>
+                <div class="row justify-content-center">
+                    <div class="col-md-12">
+                        <h4>1C: Gene-gene correlations<a href="#explain3" class="open-popup-link">
+                            <i class="bi bi-question-circle-fill" style="color:blue;">
+                        </i></a></h4>
+                        {{ genetogeneplot3 }}
+                    </div>
+                </div>
+                <br>
+                <div class="row justify-content-center">
+                    <div class="col-md-12">
+                        <h4>1D: Top co-dependencies with query gene<a href="#explain4" class="open-popup-link">
+                            <i class="bi bi-question-circle-fill" style="color:blue;">
+                        </i></a></h4>
+                        {{ genetogenetable1 }}
+                    </div>
+                </div>
+                <br>
+                <div class="row justify-content-center">
+                    <div class="col-md-6">
+                        <h4>1E: Top co-dependency network (top 10 genes from Table 1D)<a href="#explain5" class="open-popup-link">
+                            <i class="bi bi-question-circle-fill" style="color:blue;">
+                        </i></a></h4>
+                        {{ genetogenenet1 }}
+                    </div>
+                    <div class="col-md-6">
+                        <h4>1F: Relationship between query and selected genes<a href="#explain6" class="open-popup-link">
+                            <i class="bi bi-question-circle-fill" style="color:blue;">
+                        </i></a></h4>
+                        {{ genetogenescatter1 }}
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- division 3-->
+        <section style="background-color: #f7fbfe;">
+            <div class="container">
+                <div class="row" style="width: 70%; height: 5px; background-color: navy; position: absolute; left: 0; right: 0; margin: auto;">
+                </div>
+                <br>
+                <div class="section-title">
+                    <h2 style="font-size: 36px; color: navy;"><b>Gene-drug correlations (drug treatments similar to gene knockout)</b></h2>
+                </div>
+                <div class="row justify-content-center">
+                    <div class="col-md-12">
+                        <h4>1G: Gene-drug correlations<a href="#explain7" class="open-popup-link">
+                            <i class="bi bi-question-circle-fill" style="color:blue;">
+                        </i></a></h4>
+                        {{ genetodrugplot1 }}
+                    </div>
+                </div>
+                <br>
+                <div class="row justify-content-center">
+                    <div class="col-md-12">
+                        <h4>1H: Top correlated drugs with query gene<a href="#explain8" class="open-popup-link">
+                            <i class="bi bi-question-circle-fill" style="color:blue;">
+                        </i></a></h4>
+                        {{ genetodrugtable1 }}
+                    </div>
+                </div>
+                <br>
+                <div class="row justify-content-center">
+                    <div class="col-md-6">
+                        <h4>1I: Gene-drug correlation network (top 10 drugs from Table 1H)<a href="#explain9" class="open-popup-link">
+                            <i class="bi bi-question-circle-fill" style="color:blue;">
+                        </i></a></h4>
+                        {{ genetodrugnet1 }}
+                    </div>
+                    <div class="col-md-6">
+                        <h4>1J: Relationship between query gene and selected drug<a href="#explain10" class="open-popup-link">
+                            <i class="bi bi-question-circle-fill" style="color:blue;">
+                        </i></a></h4>
+                        {{ genetodrugscatter1 }}
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- GENE LIST SeCTION-->
+        <section id="geneList" class="d-flex flex-column justify-content-center align-items-center" 
+        style="background: url('assets/img/genelist.jpg') center center; background-size: cover; margin-top: 70px; height: 20vh;">
+            <div class="container text-center text-md-right" data-aos="fade-up" style="display: flex;">
+                <div class="row" style="justify-content:space-between;">
+                    <div style="width: 80%;">
+                        <h1 style="margin: 0 0 10px 0; font-size: calc(2vh + 2vw); font-weight: 700;line-height: 56px;
+                        color:midnightblue;">Query A Gene List&emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp;</h1>
+                    </div>
+                    <div style="padding-top: 10px; width: 20%;">
+                        <a id="info2" href="#helptab2" class="open-popup-link" style="font-family: 'Poppins', sans-serif;
+                        font-weight: 400;
+                        font-size: 13px;
+                        letter-spacing: 2px;
+                        display: inline-block;
+                        padding: 12px 28px;
+                        border-radius: 4px;
+                        transition: ease-in-out 0.3s;
+                        color: #fff;
+                        background:darkviolet;
+                        text-transform: uppercase;">Info</a>
+                    </div>
+                </div>       
+            </div>
+        </section>
+
+        <div id="helptab2" class="white-popup mfp-hide">
+            <h1 style="text-align: center;">Manual for Module 2: Query a Gene List</h1>
+            <hr />
+            <p style="text-align: left;">&nbsp;<strong>Module 2: Finding a drug perturbing a set of genes</strong></p>
+            <p style="text-align:left;"> <img src="DepLink_Help_Modules-02.png" height="80"></p>
+            <p style="text-align:left;">Given a short list of genes, 'Module 2: Query a Gene List' searches the molecular signatures for compounds that can up- or down-regulate the query genes. It analyzes the LINCS database to generate molecular signatures of 19811 compounds (i.e., changes in expression levels of 12328 genes following treatment) across pan-cancer cell lines.</p>
+            <p style="text-align:left;">To start  ‘Module 2: Query a Gene List’, the user should enter a short list of official gene symbols separated by new lines (or click&nbsp; <font color = "blue"><strong>[Example]</strong></font>), choose whether the genes are to be up- or down-regulated by a drug treatment, and click the orange&nbsp; <font color = "blue"> <strong>[Submit]</strong></font> button. Due to computational complexity, the module currently takes up to 10 core genes that the user expects a drug to perturb the most.</p>
+            <p style="text-align:left;"><em> <u>Pan-cancer essentialities of query genes</u></em></p>
+            <p style="text-align:left;"><strong>Panel 2A</strong> demonstrates the essentialities of the query genes to allow the user to assess the importance of the query genes on cancer cell viability. The density plot is displayed similarly to <strong>Panel 1A</strong> of Module 1 by Broad DepMap gene effect scores across all 1054 pan-cancer cell lines (&lt; -1 indicating strong essentiality of a gene in a cell line).</p>
+            <p style="text-align:left;"><em> <u>Drugs perturbing query genes</u> </em></p>
+            <p style="text-align:left;">The panel shows the perturbance of 19,811 compounds on the query genes. For the demonstrating example of selecting “down-regulated” and inputting CDK4, CDK6, and CCND1 in the text box, the panel searches all 19,811 molecular signatures for drugs with the ability of up-regulating the three cycle cell genes. <strong>Panel 2B</strong> provides results on both individual and summary of the three query genes. A series of statistical tests are performed to assess:</p>
+            <ul>
+            <li> Is the perturbance statistical meaningful across cell lines for a gene?</li>
+            <li> Is the perturbance statistical meaningful across all query genes?</li>
+            <li> Is the perturbance on query genes significantly stronger than on other genes? This test is&nbsp;to assess the degree of unintended perturbance in genes that are not included in the user’s query list.</li>
+            </ul>
+            <p style="text-align:left;">Descriptions of <strong>Panel 2B</strong> (user can click on the title of a column to sort compounds according to the column):</p>
+            <ul>
+            <li> <strong> Name</strong> and <strong>ID</strong>: Drug name and Broad drug ID.</li>
+            <li> <strong> CDK4</strong>: Average change in CDK4 expression levels by a compound across cell lines. The change is represented by a z-score comparing post- and pre-treatment expression levels in each cell line and then averaged across cell lines treated with a compound in the LINCS project (n = 1-64 per drug). A positive value indicates upregulation of the gene after drug treatment.</li>
+            <li> <strong> CDK4 pVal</strong>: P-value of the changes in CDK4 expression levels. Significance is assessed by the one-tailed t-test of the expressional changes in CDK4 across cell lines against zero (i.e., no change). A left-tail test is performed when the user selects “down-regulated”.</li>
+            <li><strong>CDK6</strong>, <strong>CDK6 pVal</strong>, <strong>CCND1</strong>, <strong>CCND1 pVal</strong>: Similar to <strong>CDK4</strong>.</li>
+            <li><strong>Mean Perturbation Score: </strong>Average among the query genes (columns <strong>CDK4</strong>, <strong>CDK6</strong>, and <strong>CCND1</strong>).</li>
+            <li><strong>T-test pVal:</strong> P-value to indicate whether the changes among all query genes are significantly above (up-regulated) or below (down-regulated) zero. A one-tailed t-test is performed based on the user’s selection of direction of regulation.</li>
+            <li><strong>Permutation pVal:</strong> P-value to indicate whether the changes among all query genes are significantly stronger than on other genes. P-value is inferred by the permutation test of 100,000 random shuffles of genes for each drug (see <strong>Panel 2C</strong> for details). </li>
+            <li><strong>Canonical SMILES:</strong> Canonical SMILES code of a drug that can be further analyzed in Module 4.</li>
+            <li><strong>PubChem:</strong> Links to PubChem.</li>
+            <li><strong>PRISM/GDSC:</strong> Indicator of whether the compound is tested in the two high-throughput drug screens. If yes, the user can navigate to Module 3 to further investigate the drug.</li>
+            </ul>
+            <p style="text-align:left;">When the user selects a drug (a row) from <strong>Panel 2B</strong>, <strong>Panel 2C</strong> shows the empirical distribution that we generated to infer‘Permutation pVal’ for the corresponding drug.<strong>&nbsp;</strong> For each drug, an empirical normal distribution is generated based on the mean and std of 100,000 random selections of the same number of genes as the query list from all 12328 genes included in LINCS molecular signatures. The vertical line indicates the observed mean perturbation score. Permutation pVal is estimated by the portion of random gene selections that achieve stronger mean perturbation scores than the one observed from query genes.</p>
+            <hr />
+            <p style="text-align: center;"><span style="color: #000000;">Greehey Children's Cancer Research Institute, The University of Texas Health San Antonio</span></p>
+            <p style="text-align:center;"> <img src="uthsa_logo.png" height="80"></p>
+        </div>
+
+        <section style="background-color: #f7fbfe;">
+            <div class="section-title">
+                <h2 style="font-size: 36px; color: navy;"><b>Inputs</b></h2>
+                <p>Type in up to 10 genes to be up-regulated or down-regulated</p>
+            </div>
+            <div style="width: 70%; height: 5px; background-color: navy; margin: auto;">
+            </div>
+            <div class="container">
+                <div class="row justify-content-center" style="padding-top: 2vh; line-height: 200%; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; font-size: 20px;">
+                    <div style="width: 50%; padding-left: 6%;">
+                        <b>
+                        {{ regulation }}
+                        <br>
+                        {{ list1 }} 
+                        <br>
+                        {{ example1 }} 
+                        {{ submit2 }}
+                        {{ text1 }}
+                        </b> 
+                    </div>
+                </div>
+                <br>
+                
+            </div>
+        </section>
+
+        <!-- division 1-->
+        <section style="background-color: #f7fbfe;">
+            <div style="width: 70%; height: 5px; background-color: navy; position: absolute; left: 0; right: 0; margin: auto;">
+            </div>
+            <br>
+            <div class="container">
+                <div class="section-title">
+                    <h2 style="font-size: 36px; color: navy;"><b>Pan-cancer essentiality of query genes</b></h2>
+                </div>
+                <div class="row justify-content-center">
+                    <div class="col-md-12">
+                        <h4>2A: Dependency scores across all cell lines (Broad DepMap)<a href="#explain11" class="open-popup-link">
+                            <i class="bi bi-question-circle-fill" style="color:blue;">
+                        </i></a></h4>
+                        {{ genesplot1 }}
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- division 2-->
+        <section style="background-color: #f7fbfe;">
+            <div style="width: 70%; height: 5px; background-color: navy; position: absolute; left: 0; right: 0; margin: auto;">
+            </div>
+            <br>
+            <div class="container">
+                
+                <div class="section-title">
+                    <h2 style="font-size: 36px; color: navy;"><b>Drugs perturbing query genes</b></h2>
+                </div>
+                <div class="row justify-content-center">
+                    <div class="col-md-12">
+                        <h4>2B: Top compounds<a href="#explain12" class="open-popup-link">
+                            <i class="bi bi-question-circle-fill" style="color:blue;">
+                        </i></a></h4>
+                        {{ genestable1 }}
+                    </div>
+                </div>
+                <ul>
+                    <li><strong>Gene pVal:</strong> Statistical significance of the perturbance of each query gene across cell lines for a gene. P-value is assessed by the one-tailed t-test against zero. </li>
+                    <li><strong>T-test pVal:</strong> Statistical significance of the perturbance across all query genes. P-value is assessed by the one-tailed t-test against zero.</li>
+                    <li><strong>Permutation pVal:</strong> Statistical significance of the perturbance on query genes compared to other genes, in order to assess the degree of unintended perturbance by a drug. P-value is assessed by empirical normal distribution with parameters generated from 100,000 random permutations.</li>
+                </ul>
+                <br>
+                <div class="row justify-content-center">
+                    <div class="col-md-12">
+                        <h4>2C: Empirical distribution for permutation test<a href="#explain13" class="open-popup-link">
+                            <i class="bi bi-question-circle-fill" style="color:blue;">
+                        </i></a></h4>
+                        {{ genesplot2 }}
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- End Shiny -->
+     
+        <footer id="footer" style="box-shadow: 0px 0px 10px 0px rgba(1, 1, 82, 0.4); display: flex;">
+            <div class="container d-md-flex" style="padding-top: 10px; padding-bottom: 3px;">
+                <div class="text-md-left" style="width: 50%; float: left;">
+                    <h3 style="font-size: 20px; padding-top: 5px;">University of Texas Health San Antonio</h3>
+                    <h4 style="font-size: 15px;">Greehey Children's Cancer Research Institute</h4>
+                </div>
+                <div>
+                    <img src="uthsa_logo.png" style="width:200px; height: 50px; object-fit: contain; padding-top: 5px;">
+                </div>
+                <div class="text-center text-md-right"style="padding-top: 40px; width: 50%; float: right;">
+                    <h3 style="font-size: 1vh; padding-left: 60%;">Version: 1.0 (2021.12.10) Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a></h3>
+                </div>
+            </div>
+
+        </footer>
+        
+        </div>
+        <!-- End of Gene Page-->
+
+        <!-- Drug And New Compounds Query Page-->
+        <div id="drugdiv" style="display: none;">
+   
+        <header id="header" class="fixed-top d-flex align-items-center">
+            <div class="container d-flex align-items-center">
+            <div class="logo me-auto">
+                <h1><a href="#" onclick="SwitchTo(1)">Deplink</a></h1>
+            </div>
+                <nav id="navbar" class="navbar order-last order-lg-0 m-auto">
+                    <ul>
+                        <li>
+                            <a class="nav-link" href="#" onclick="SwitchTo(1)">Home</a>
+                        </li> 
+                        <li>
+                            <a class="nav-link" href="#" onclick="SwitchTo(2)" >About</a>
+                        </li>
+                        
+                        <li class="dropdown"><a href="#"><span>Genes</span> <i class="bi bi-chevron-down"></i></a>
+                            <ul>
+                                <li><a class="nav-link" href="#" onclick="SwitchTo(3)">Query Gene</a></li>
+                                <li><a class="scrollto" href="#geneList" onclick="SwitchTo(3)">Gene List</a></li>
+                            </ul>  
+                        </li>
+                        <li class="dropdown"><a href="#"style="text-decoration-line: underline; text-decoration-color: deepskyblue; text-decoration-thickness: 0.5vh;"><span>Drugs</span> <i class="bi bi-chevron-down"></i></a>
+                            <ul>
+                                <li><a class="nav-link" href="#" onclick="SwitchTo(4)">Query Drug</a></li>
+                                <li><a class="scrollto" href="#newDrug" onclick="SwitchTo(4)">New Drug</a></li>
+                            </ul>  
+                        </li>
+                        <li>
+                            <a class="nav-link" href="#" onclick="SwitchTo(5)">Contact</a>
+                        </li>
+                    </ul>
+                    <i class="bi bi-list mobile-nav-toggle"></i>
+                </nav>
+            </div>
+        </header>
+
+        <!-- Shiny Section -->
+        <section id="drugQuery" class="d-flex flex-column justify-content-center align-items-center" 
+        style="background: url('assets/img/drug_query.jpg') center center; background-size: cover; margin-top: 70px; height: 20vh;">
+            <div class="container text-center text-md-right" data-aos="fade-up" style="display: flex;">
+                <div class="row" style="justify-content:space-between;">
+                    <div style="width: 80%;">
+                        <h1 style="margin: 0 0 10px 0; font-size: calc(2vh + 2vw); font-weight: 700;line-height: 56px;
+                        color: #fff;">Query A Drug &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp;</h1>
+                    </div>
+                    <div style="padding-top: 10px; width: 20%;">
+                        <a id="info3" href="#helptab3" class="open-popup-link" style="font-family: 'Poppins', sans-serif;
+                        font-weight: 400;
+                        font-size: 13px;
+                        letter-spacing: 2px;
+                        display: inline-block;
+                        padding: 12px 28px;
+                        border-radius: 4px;
+                        transition: ease-in-out 0.3s;
+                        color: #fff;
+                        background:forestgreen;
+                        text-transform: uppercase;">Info</a>
+                    </div>
+                </div>       
+            </div>
+        </section>
+
+        <div id="helptab3" class="white-popup mfp-hide">
+            <h1 style="text-align: center;">Manual for Module 3: Query a Drug</h1>
+            <hr />
+            <p style="text-align: left;">&nbsp;<strong>Module 3: Finding a gene knockout with similar perturbation effects to a drug treatment</strong></p>
+            <p style="text-align:left;"> <img src="DepLink_Help_Modules-03.png" height="80"></p>
+            <p style="text-align:left;">
+                To start  ‘Module 3: Query a Drug’, the user should enter a common drug name, such as <strong>palbociclib</strong> or a BRD ID,&nbsp;or select one from the drop-down menu and select a cancer type (or default option PanCan). If multiple instances are found in the two drug data sources, i.e. PRISM and GDSC,  a table will pop up below the ‘Cancer Type’ drop-down menu and user should select the drug instance of interest by clicking on the row to start the analysis.</p>
+                
+            <p style="text-align:left;"><em> <u>Distributions of drug sensitivities</u> </em></p>
+            <p style="text-align:left;"><strong>Panel 3A</strong> examines the log-fold change (for PRISM drug) or IC50 (for GDSC drug) distribution across all cancer cell lines (PanCan) or for selected cancer type.<strong>&nbsp;</strong>The density plot provides information on the inhibition of cell viability induced by a drug. A box plot in <strong>Panel 3B</strong> is  generated to allow the user to visually examine the effectiveness of the drug across all cancer types. Here, a more negative value indicates stronger inhibited cell vialibility following drug treatment and thus&nbsp;denote better sensitivity. Please note that cancer types at the bottom of boxplot may not display due to the size of box-plot in display. The user may resize the window to allow all label to be displayed or hover the cursor over the box-plot to visualize the cancer type.</p>
+
+            <p style="text-align:left;"><em> <u>Drug-drug co-sensitivities (similar drugs)</u> </em></p>
+
+            <p style="text-align:left;">To explore the co-sensitivities of the query drug (for example, <strong>palbociclib</strong> in the PRISM dataset) with all other drugs in the same drug screening dataset. Distribution of the Pearson correlation coefficients are plotted in <strong>Panel 3C</strong>. Top co-sensitive drugs of the query are tabulated in <strong>Panel 3D</strong>. For instance, the top correlated drugs to palbociclib include ribociclib and abemaciclib which are also CDK inhibitors. To better visualize the drug co-sensitivities similar to <strong>Panel 1E</strong> in Module 1, an interactive  network of the query drug and&nbsp;its top co-sensitive drugs is displayed in <strong>Panel 3E</strong>. Here the query drug palbociclib is displayed in the center in blue diamond. The connecting edges are color coded to reflect the direction (red: positive correlation, blue: negative correlation) and the width of the connecting edge reflects the magnitude of the correlation coefficient.</p>
+                
+            <p style="text-align:left;">Users can constrain the table (in <strong>Panel 3D</strong>) using the ‘Search:’ box by drug name, Broad ID, or target genes for  PRISM drugs and by drug name or Broad ID for  GDSC drugs. Alternatively, the user can sort the table by clicking on the header of a table column. After reordering the table, the network figure (<strong>Panel 3E</strong>) will update automatically. A scatter plot (<strong>Panel 3F</strong>) between query drug and selected co-sensitive drug is plotted when the user selects a row (clicking the row), on the co-response table (<strong>Panel 3E</strong>), to visually assess the robustness of co-sensitive drugs.</p>
+
+            Column descriptions of <strong>Panel 3D</strong> (for PRISM drug screen),
+            <ul>
+            <li> Drug Name: Common drug name.</li>
+            <li> Broad ID: Broad drug ID if available.</li>
+            <li> Correlation: Correlation coefficient of query drug to any other drugs in PRISM. Network  edge width is based on this column.</li>
+            <li> Dose: Drug dose.</li>
+            <li> Screen ID: Drug screen ID.</li>
+            <li> Target Gene: Known  target genes.</li>
+            </ul>
+                
+            Column descriptions of <strong>Panel 3D</strong> (for GDSC drug screen),
+            <ul>
+            <li> Drug Name: Common drug name.</li>
+            <li> Broad ID: Broad drug ID  if available.</li>
+            <li> Correlation: Correlation coefficient of query drug to other drugs in GDSC. Network edge width is based on this column.</li>
+            </ul>
+                
+            <p style="text-align:left;"><em> <u>Drug-gene correlations (similar gene knockouts)</u> </em></p>
+                
+            <p style="text-align:left;">Pearson correlation coefficients are automatically computed between the query drug and any gene dependencies in the two CRISPR screens (Broad and Sanger DepMaps) across PanCan collection or selected cancer type.   Two density distributions of correlation coefficients of the query drug palbociclib are displayed in <strong>Panel 3G</strong> , i.e.,&nbsp;palbociclib (PRISM) vs. Broad DepMap and palbociclib (PRISM) vs. Sanger DepMap. <strong>Panel 3H</strong> shows a table of correlation coefficients for both comparisons.</p>
+
+            <p style="text-align:left;"> <strong>Panel 3I</strong> &nbsp;displays the network visualization of correlations between the query drug (palbociclib, in blue diamond) and top 10 gene knockouts (in orange circle), where the connecting edges are coded for color and width based on correlation coefficient values.  A scatter plot (<strong>Panel 3J</strong>) between the query drug and a selected gene  is generated and updates itself when user selects a gene of interest from <strong>Panel 3H</strong> (by clicking a row) to visually assess the robustness of drug-gene association.</p>
+                
+            <p style="text-align:left;"> In case of query search for drug Palbociclib from the PRISM dataset, the top correlated genes to this drug are CDK6 and CCND1. In additional to this, palbociclib is found to achieve similar response  to    ribociclib and abemaciclib that are also CDK inhibitors. These results are in agreement to those of Module 1, where a query search on gene CDK6 listed ribociclib as one of the top correlation drug. To further investigate the similarity between palbociclib and these CDK inhibitors and other drugs, the user may use  Module 4 by inputting the SMILES code of palbociclib.</p>
+
+            Column descriptions of <strong>Panel 3H </strong>,
+            <ul>
+            <li> <strong> Gene Name:</strong> Gene symbol.</li>
+            <li> <strong> Corr in Broad DepMap:</strong> Correlation coefficient of the query drug to a gene knockout from Broad DepMap  dataset.</li>
+            <li> <strong> Corr in Sanger DepMap:</strong> Correlation coefficient of the query drug to a gene knockout from Sanger DepMap dataset.</li>
+            <li> <strong> Max Corr:</strong> Maximum correlation coefficient between <strong>Corr in Broad DepMap</strong> and <strong>Corr in Sanger DepMap</strong>.</li>
+            <li> <strong> Avg Corr:</strong> Average correlation coefficient between&nbsp;<strong>Corr in Broad DepMap</strong> and <strong>Corr in Sanger DepMap</strong>.</li>
+            </ul>
+            <hr />
+            <p style="text-align: center;"><span style="color: #000000;">Greehey Children's Cancer Research Institute, The University of Texas Health San Antonio</span></p>
+            <p style="text-align:center;"> <img src="uthsa_logo.png" height="80"></p>
+        </div>
+
+        <!-- division 1 -->
+        <section style="background-color: #f7fbfe;">
+            <div class="section-title">
+                <h2 style="font-size: 36px; color: navy;"><b>Inputs</b></h2>
+                <p>Input drug name, gene name, and data source to get started</p>
+            </div>
+            <div style="width: 70%; height: 5px; background-color: navy; margin: auto;">
+            </div>
+            <div class="container">
+                <div class="row justify-content-center" style="padding-top: 2vh;">
+                    {{ drugid }}
+                    {{ cancertype2 }}
+                </div>
+                <br>
+                <div class="row justify-content-center">
+                    <h4>Select A Dataset<a href="#explain27" class="open-popup-link">
+                        <i class="bi bi-question-circle-fill" style="color:blue;">
+                    </i></a></h4>
+                    {{ selectsource }}
+                </div>
+            </div>
+        </section>
+
+        <!-- division 2-->
+        <section style="background-color: #f7fbfe;">
+            <div style="width: 70%; height: 5px; background-color: navy; position: absolute; left: 0; right: 0; margin: auto;">
+            </div>
+            <br>
+            <div class="container">
+                <div class="section-title">
+                    <h2 style="font-size: 36px; color: navy;"><b>Distribution of drug sensitivities</b></h2>
+                </div>
+                <div class="row justify-content-center">
+                    <div class="col-md-6">
+                        <h4>3A: Drug sensitivities across cell lines<a href="#explain14" class="open-popup-link">
+                            <i class="bi bi-question-circle-fill" style="color:blue;">
+                        </i></a></h4>
+                        {{ drugtodrugplot1 }}
+                    </div>
+                    <div class="col-md-6">
+                        <h4>3B: Pan-cancer drug sensitivities<a href="#explain15" class="open-popup-link">
+                            <i class="bi bi-question-circle-fill" style="color:blue;">
+                        </i></a></h4>
+                        {{ drugtodrugplot2 }}
+                    </div>
+                </div>
+            </div>
+        </section>
+       
+        <!-- division 4-->
+        <section style="background-color: #f7fbfe;">
+            <div class="container">
+                <div class="row" style="width: 70%; height: 5px; background-color: navy; position: absolute; left: 0; right: 0; margin: auto;">
+                </div>
+                <br>
+                <div class="section-title">
+                    <h2 style="font-size: 36px; color: navy;"><b>Drug-drug co-sensitivities (similar drugs)</b></h2>
+                </div>
+                <div class="row justify-content-center">
+                    <div class="col-md-12">
+                        <h4>3C: Drug-drug correlations<a href="#explain16" class="open-popup-link">
+                            <i class="bi bi-question-circle-fill" style="color:blue;">
+                        </i></a></h4>
+                        {{ drugtodrugplot3 }}
+                    </div>
+                </div>
+                <br>
+                <div class="row justify-content-center">
+                    <div class="col-md-12">
+                        <h4>3D: Top co-sensitivities with query drug<a href="#explain17" class="open-popup-link">
+                            <i class="bi bi-question-circle-fill" style="color:blue;">
+                        </i></a></h4>
+                        {{ drugtodrugtable1 }}
+                    </div>
+                </div>
+                <br>
+                <div class="row justify-content-center">
+                    <div class="col-md-6">
+                        <h4>3E: Top co-sensitivity network (top 10 drugs from Table 3D)<a href="#explain18" class="open-popup-link">
+                            <i class="bi bi-question-circle-fill" style="color:blue;">
+                        </i></a></h4>
+                        {{ drugtodrugnet1 }}
+                    </div>
+                    <div class="col-md-6">
+                        <h4>3F: Relationship between query and selected drugs<a href="#explain19" class="open-popup-link">
+                            <i class="bi bi-question-circle-fill" style="color:blue;">
+                        </i></a></h4>
+                        {{ drugtodrugscatter1 }}
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- division 4-->
+        <section style="background-color: #f7fbfe;">
+            <div class="container">
+                <div class="row" style="width: 70%; height: 5px; background-color: navy; position: absolute; left: 0; right: 0; margin: auto;">
+                </div>
+                <br>
+                <div class="section-title">
+                    <h2 style="font-size: 36px; color: navy;"><b>Gene-drug correlations (drug treatments similar to gene knockout)</b></h2>
+                </div>
+                <div class="row justify-content-center">
+                    <div class="col-md-12">
+                        <h4>3G: Gene-drug correlations<a href="#explain20" class="open-popup-link">
+                            <i class="bi bi-question-circle-fill" style="color:blue;">
+                        </i></a></h4>
+                        {{ drugtogeneplot1 }}
+                    </div>
+                </div>
+                <br>
+                <div class="row justify-content-center">
+                    <div class="col-md-12">
+                        <h4>3H: Top correlated genes with query drug<a href="#explain21" class="open-popup-link">
+                            <i class="bi bi-question-circle-fill" style="color:blue;">
+                        </i></a></h4>
+                        {{ drugtogenetable1 }}
+                    </div>
+                </div>
+                <br>
+                <div class="row justify-content-center">
+                    <div class="col-md-6">
+                        <h4>3I: Drug-gene correlation network (top 10 drugs from Table 3H)<a href="#explain22" class="open-popup-link">
+                            <i class="bi bi-question-circle-fill" style="color:blue;">
+                        </i></a></h4>
+                        {{ drugtogenenet1 }}
+                    </div>
+                    <div class="col-md-6">
+                        <h4>3J: Relationship between query drug and selected gene<a href="#explain23" class="open-popup-link">
+                            <i class="bi bi-question-circle-fill" style="color:blue;">
+                        </i></a></h4>
+                        {{ drugtogenescatter1 }}
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- End of Query Drug-->
+
+        <!-- Query new drug page -->
+        <section id="newDrug" class="d-flex flex-column justify-content-center align-items-center" 
+        style="background: url('assets/img/new_drug.jpg') center center; background-size: cover; margin-top: 70px; height: 20vh;">
+            <div class="container text-center text-md-right" data-aos="fade-up" style="display: flex;">
+                <div class="row" style="justify-content:space-between;">
+                    <div style="width: 80%;">
+                        <h1 style="margin: 0 0 10px 0; font-size: calc(2vh + 2vw); font-weight: 700;line-height: 56px;
+                        color: #fff;">Query A New Drug &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp;</h1>
+                    </div>
+                    <div style="padding-top: 10px; width: 20%;">
+                        <a id="info4" href="#helptab4" class="open-popup-link" style="font-family: 'Poppins', sans-serif;
+                        font-weight: 400;
+                        font-size: 13px;
+                        letter-spacing: 2px;
+                        display: inline-block;
+                        padding: 12px 28px;
+                        border-radius: 4px;
+                        transition: ease-in-out 0.3s;
+                        color: #fff;
+                        background:forestgreen;
+                        text-transform: uppercase;">Info</a>
+                    </div>
+                </div>       
+            </div>
+        </section>
+
+        <div id="helptab4" class="white-popup mfp-hide">
+            <h1 style="text-align: center;">Manual for Module 4 - Query a New Drug</h1>
+            <hr />
+            <p style="text-align:left;">&nbsp;<strong>Module 4: Finding a drug sharing similar biochemical fingerprints with a new compound</strong></p>
+            <p style="text-align:left;"> <img src="DepLink_Help_Modules-04.png" height="70"></p>
+                
+            This module is designed to allow users to query new drugs by examining drug fingerprint similarity. To begin, the user should enter a canonical SMILE code of the compound of interest (either investigational or established), for example, the SMILES code for metformin:
+            <p><font face="Courier" size="-1">&nbsp; &nbsp; &nbsp; CN(C)C(=N)NC(N)=N</font></p>
+            <p> The algorithm then plots a 2D structure of the query drug in <strong>Panel 4A&nbsp;</strong>and generate corresponding biochemical fingerprints of 1047 bits using the R package rcdk:</p>
+            <p> <font face="Courier" size="-1"> &nbsp; &nbsp; mols &lt;- parse.smiles( drug_smiles ) <br>
+            &nbsp; &nbsp; fps &lt;- lapply(mols, get.fingerprint, type=c('pubchem', 'maccs') )</font></p>
+            <p>Here we have pre-calculated the fingerprints of 4686 drugs included in the PRISM project based on the canonical SMILES codes. The query drug is compared against all the 4686 compounds  by the Tanimoto similarity, a commonly used&nbsp; similarity measure fingerprints to assess  structural and biochemical similarity. In <strong>Panel 4D</strong>, a table is populated to display top similar drugs to the query compound. For the query  example, the module correctly hits&nbsp;<strong>metformin</strong> with Tanimoto similarity score of 1, followed by guanidine (where metformin is derived from) with a similarity of&nbsp;0.489.</p>
+            <p>The user can    select a drug of interest (a row) from the table to automatically generate <strong>Panels 4B and 4C</strong> . <strong>Panel 4B</strong> shows the 2D structure of the selected drug to be contrasted with that of the query drug in&nbsp; <strong>Panel 4A</strong>. In&nbsp; <strong>Panel 4C</strong>, a Venn diagram visualizes the overlap in biochemical features (1's in the fingerprints) between the query and selected drugs, providing additional information regarding the numbers of commonly shared  structures and those unique to each drug.</p>
+            <p> We also pre-generated&nbsp;t-SNE low-dimensional representation of the biochemical fingerprints based on 4686 compounds of PRISM. In <strong>Panel 4E</strong>, the query drug (<font color="red">red dot</font>) is projected to the 3D t-SNE plot by the average of the 3 most similar drugs (<font color="green">green crosses</font>). The drug selected from Panel 4D is shown in a <font color="#CCCC00">yellow diamond</font> and all other PRISM drugs are labeled by <font color="grey">grey dots</font>.&nbsp;The selected drug (e.g., <strong>guanidine</strong>), as well as the query drug's 2D structure will be shown in the first 2 panels, allow users to inspect the similarity of these two selected drugs. </p> 
+            <hr />
+            <p style="text-align: center;"><span style="color: #000000;">Greehey Children's Cancer Research Institute, The University of Texas Health San Antonio</span></p>
+            <p style="text-align:center;"> <img src="uthsa_logo.png" height="80"></p>
+        </div>
+
+        <!-- division 1 -->
+        <section style="background-color: #f7fbfe;">
+            <div class="section-title">
+                <h2 style="font-size: 36px; color: navy;"><b>Inputs</b></h2>
+                <p>Input the SMILES code of the new drug</p>
+            </div>
+            <div style="width: 70%; height: 5px; background-color: navy; margin: auto;">
+            </div>
+            <div class="container">
+                <br>
+                <div class="row justify-content-center" style="padding-top: 2vh;">
+                    <div style="width: 50%;">
+                        <b>{{ smilecode }}</b>
+                    </div>
+                    
+                </div>
+                <br>
+                <div class="row justify-content-center" style="position:absolute; left:30%; right: 30%;">
+                    {{ example2 }}
+                </div>
+            </div>
+        </section>
+
+        <!-- division 2 -->
+        <section style="background-color: #f7fbfe;">
+            <div style="width: 70%; height: 5px; background-color: navy; position: absolute; left: 0; right: 0; margin: auto;">
+            </div>
+            <br>
+            <div class="container">
+                <div class="section-title">
+                    <h2 style="font-size: 36px; color: navy;"><b>Top similar Prism Drugs</b><a href="#explain25" class="open-popup-link">
+                        <i class="bi bi-question-circle-fill" style="color:blue;">
+                    </i></a></h2>
+                </div>
+                <div class="row justify-content-center">
+                   <div class="col-md-12">
+                       {{ simdrugs }}
+                   </div>
+                </div>
+            </div>
+        </section>
+
+         <!-- division 3-->
+         <section style="background-color: #f7fbfe;">
+            <div style="width: 70%; height: 5px; background-color: navy; position: absolute; left: 0; right: 0; margin: auto;">
+            </div>
+            <br>
+            <div class="container">
+                <div class="section-title">
+                    <h2 style="font-size: 36px; color: navy;"><b>Chemical structures of query and selected drugs</b></h2>
+                </div>
+                <div class="row justify-content-center">
+                    <div class="col-md-4">
+                        <h4>4A: 2D structure of query drug</h4>
+                        {{ newdrugplot1 }}
+                    </div>
+                    <div class="col-md-4">
+                        <h4>4B: 2D structure of selected drug</h4>
+                        {{ newdrugplot2 }}
+                    </div>
+                    <div class="col-md-4">
+                        <h4>4C: Common features in biochemical fingerprints<a href="#explain24" class="open-popup-link">
+                            <i class="bi bi-question-circle-fill" style="color:blue;">
+                        </i></a></h4>
+                        {{ vdplot }}
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- division 4 -->
+        <section style="background-color: #f7fbfe;">
+            <div style="width: 70%; height: 5px; background-color: navy; position: absolute; left: 0; right: 0; margin: auto;">
+            </div>
+            <br>
+            <div class="container">
+                <div class="section-title">
+                    <h2 style="font-size: 36px; color: navy;"><b>tSNE plots of query and PRISM drugs</b><a href="#explain26" class="open-popup-link">
+                        <i class="bi bi-question-circle-fill" style="color:blue;">
+                    </i></a></h2>
+                </div>
+                <div class="row justify-content-center">
+                   <div class="col-md-12">
+                       {{ tsne }}
+                   </div>
+                </div>
+            </div>
+        </section>
+
+        <footer id="footer" style="box-shadow: 0px 0px 10px 0px rgba(1, 1, 82, 0.4); display: flex;">
+            <div class="container d-md-flex" style="padding-top: 10px; padding-bottom: 3px;">
+                <div class="text-md-left" style="width: 50%; float: left;">
+                    <h3 style="font-size: 20px; padding-top: 5px;">University of Texas Health San Antonio</h3>
+                    <h4 style="font-size: 15px;">Greehey Children's Cancer Research Institute</h4>
+                </div>
+                <div>
+                    <img src="uthsa_logo.png" style="width:200px; height: 50px; object-fit: contain; padding-top: 5px;">
+                </div>
+                <div class="text-center text-md-right"style="padding-top: 40px; width: 50%; float: right;">
+                    <h3 style="font-size: 1vh; padding-left: 60%;">Version: 1.0 (2021.12.10) Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a></h3>
+                </div>
+            </div>
+
+        </footer>
+      
+        </div>
+        <!-- End of Drug Page-->
+
+        <!-- Contact Page-->
+        <div id="contactdiv" style="display: none;">
+
+        <header id="header" class="fixed-top d-flex align-items-center">
+            <div class="container d-flex align-items-center">
+            <div class="logo me-auto">
+                <h1><a href="#" onclick="SwitchTo(1)">Deplink</a></h1>
+            </div>
+                <nav id="navbar" class="navbar order-last order-lg-0 m-auto">
+                    <ul>
+                        <li>
+                            <a class="nav-link" href="#" onclick="SwitchTo(1)">Home</a>
+                        </li> 
+                        <li>
+                            <a class="nav-link" href="#" onclick="SwitchTo(2)" >About</a>
+                        </li>
+                        <li class="dropdown"><a href="#"><span>Genes</span> <i class="bi bi-chevron-down"></i></a>
+                            <ul>
+                                <li><a class="nav-link" href="#" onclick="SwitchTo(3)">Query Gene</a></li>
+                                <li><a class="scrollto" href="#geneList" onclick="SwitchTo(3)">Gene List</a></li>
+                            </ul>  
+                        </li>
+                        <li class="dropdown"><a href="#"><span>Drugs</span> <i class="bi bi-chevron-down"></i></a>
+                            <ul>
+                                <li><a class="nav-link" href="#" onclick="SwitchTo(4)">Query Drug</a></li>
+                                <li><a class="scrollto" href="#newDrug" onclick="SwitchTo(4)">New Drug</a></li>
+                            </ul>  
+                        </li>
+                        <li>
+                            <a class="nav-link" href="#" onclick="SwitchTo(5)" style="text-decoration-line: underline; text-decoration-color: deepskyblue; text-decoration-thickness: 0.5vh;">Contact</a>
+                        </li>
+                    </ul>
+                    <i class="bi bi-list mobile-nav-toggle"></i>
+                </nav>
+            </div>
+        </header>
+        
+        <br>
+        <br>
+        <section id="contact" class="contact section-bg">
+            <div class="container">
+    
+            <div class="section-title">
+                <h2>Contact UTHSCA</h2>
+                <p>If you have any questions or comments about Deplink</p>
+            </div>
+    
+            <div class="row mt-5 justify-content-center">
+    
+                <div class="col-lg-10">
+    
+                <div class="info-wrap">
+                    <div class="row">
+                    <div class="col-lg-4 info">
+                        <i class="bi bi-geo-alt"></i>
+                        <h4>Location:</h4>
+                        <p>7703 Floyd Curl Dr<br>San Antonio, TX 78229</p>
+                    </div>
+    
+                    <div class="col-lg-4 info mt-4 mt-lg-0">
+                        <i class="bi bi-envelope"></i>
+                        <h4>Email:</h4>
+                        <p>webteam@uthscsa.edu</p>
+                    </div>
+    
+                    <div class="col-lg-4 info mt-4 mt-lg-0">
+                        <i class="bi bi-phone"></i>
+                        <h4>Call:</h4>
+                        <p>210-567-7000</p>
+                    </div>
+                    </div>
+                </div>
+    
+                </div>
+    
+            </div>
+    
+            <!-- ======= Team Section ======= -->
+            <section id="team" class="team">
+                <div class="container">
+        
+                <div class="section-title">
+                    <h2>Team</h2>
+                    <p>Meet the Research Team</p>
+                </div>
+        
+                <div class="row justify-content-center">
+                    <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
+                    <div class="member">
+                        <img src="assets/img/team/sample.jpg" alt="">
+                        <h4>Yidong Chen, Ph.D.</h4>
+                        <span>ChenY8@uthscsa.edu</span>
+                        <p>
+                        Any information you would like to include
+                        </p>
+                        <div class="social">
+                        <a href=""><i class="bi bi-twitter"></i></a>
+                        <a href=""><i class="bi bi-facebook"></i></a>
+                        <a href=""><i class="bi bi-instagram"></i></a>
+                        <a href=""><i class="bi bi-linkedin"></i></a>
+                        </div>
+                    </div>
+                    </div>
+        
+                    <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
+                    <div class="member">
+                        <img src="assets/img/team/sample.jpg" alt="">
+                        <h4>Yu-Chiao Chiu, Ph.D.</h4>
+                        <span>ChiuY@uthscsa.edu</span>
+                        <p>
+                        Any information you would like to include
+                        </p>
+                        <div class="social">
+                        <a href=""><i class="bi bi-twitter"></i></a>
+                        <a href=""><i class="bi bi-facebook"></i></a>
+                        <a href=""><i class="bi bi-instagram"></i></a>
+                        <a href=""><i class="bi bi-linkedin"></i></a>
+                        </div>
+                    </div>
+                    </div>
+        
+                    <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
+                    <div class="member">
+                        <img src="assets/img/team/sample.jpg" alt="">
+                        <h4>Insert new name</h4>
+                        <span>Insert email</span>
+                        <p>
+                        Add additional people by copying and pasting this div row
+                        </p>
+                        <div class="social">
+                        <a href=""><i class="bi bi-twitter"></i></a>
+                        <a href=""><i class="bi bi-facebook"></i></a>
+                        <a href=""><i class="bi bi-instagram"></i></a>
+                        <a href=""><i class="bi bi-linkedin"></i></a>
+                        </div>
+                    </div>
+                    </div>
+        
+                </div>
+        
+                </div>
+            </section><!-- End Team Section -->
+
+            <br>
+            <div class="row">
+                <div class="col-md-12" style="text-align: center;">
+                    <p style="font-size: 10px;"><b>Made by: </b>Tapsya Nayak†, Li-Ju Wang†, Michael Ning, Gabriela Rubannelsonkumar, Eric Jin, Siyuan Zheng, Peter J. Houghton, Yufei Huang, Yu-Chiao Chiu*, Yidong Chen*</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <img src="assets/img/uthsa_logo.png" style="display: block; margin-left: auto; margin-right: auto; max-height: 100px; max-width: 200px;">
+                </div>
+            </div>
+            </div>
+        </section>
+
+        <footer id="footer" style="box-shadow: 0px 0px 10px 0px rgba(1, 1, 82, 0.4); display: flex;">
+            <div class="container d-md-flex" style="padding-top: 10px; padding-bottom: 3px;">
+                <div class="text-md-left" style="width: 50%; float: left;">
+                    <h3 style="font-size: 20px; padding-top: 5px;">University of Texas Health San Antonio</h3>
+                    <h4 style="font-size: 15px;">Greehey Children's Cancer Research Institute</h4>
+                </div>
+                <div>
+                    <img src="uthsa_logo.png" style="width:200px; height: 50px; object-fit: contain; padding-top: 5px;">
+                </div>
+                <div class="text-center text-md-right"style="padding-top: 40px; width: 50%; float: right;">
+                    <h3 style="font-size: 1vh; padding-left: 60%;">Version: 1.0 (2021.12.10) Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a></h3>
+                </div>
+            </div>
+
+        </footer>
+        
+        </div>
+        <!-- End Contact Page -->
+
+        <!-- HTML EXPLAIN POPUPS -->
+        <div id="explain1" class="white-popup mfp-hide">
+            <strong>Essentiality of query gene (gene effect scores)</strong> 
+            in selected cancer type(s) from two genome-wide CRISPR screens: Broad and Sanger DepMaps.
+             A score more negative than -1 defines strong essentiality; i.e., gene knockout effectively inhibits cell viability.
+        </div>
+        <div id="explain2" class="white-popup mfp-hide">
+            Pan-cancer distribution of gene effect scores for the query gene. 
+            A score more negative than -1 defines strong essentiality; i.e., gene knockout effectively inhibits cell viability.
+        </div>
+        <div id="explain3" class="white-popup mfp-hide">
+            <strong>Correlation coefficients in gene effect scores</strong> 
+            between query gene and any other genes in Broad and Sanger screens.
+        </div>
+        <div id="explain4" class="white-popup mfp-hide">
+            <strong>Correlation in gene effect scores</strong> between the query gene and any other genes.
+             A strong positive correlation denotes similar inhibitory effects between two gene knockouts.
+        </div>
+        <div id="explain5" class="white-popup mfp-hide">
+            Network of <strong>the top 10 correlated genes</strong> as sorted in Panel 1D. 
+            Color and width of edges represent the direction and magnitude of correlations, respectively.
+        </div>
+        <div id="explain6" class="white-popup mfp-hide">
+            Gene effect scores of query gene and the gene selected from Panel 1D. 
+            Each dot is a cell line of the selected cancer type(s).
+        </div>
+        <div id="explain7" class="white-popup mfp-hide">
+            Similarity in inhibitory effects between <strong>knocking out the query gene</strong> and <strong>drug treatments</strong> in selected cancer cell lines.
+            Drug sensitivity data are derived from the PRISM (4686 drugs) and GDSC (397 drugs) Screens.
+        </div>
+        <div id="explain8" class="white-popup mfp-hide">
+            Correlations in inhibitory effects between <strong>knocking out the query gene</strong> and <strong>a drug treatment</strong>. 
+            A strong positive correlation denotes similar inhibitory effect between the query gene and a drug.
+        </div>
+        <div id="explain9" class="white-popup mfp-hide">
+            Network of <strong>the top 10 correlated drugs to the query gene</strong> as sorted in Panel 1H. 
+            Color and width of edges represent the direction and magnitude of correlations, respectively.
+        </div>
+        <div id="explain10" class="white-popup mfp-hide">
+            Gene effect scores of query gene and the drug selected from Panel 1H. Each dot is a cell line of the selected cancer type(s). 
+            Drug sensitivity is represented by log-fold change (PRISM) or IC50 (GDSC), where a more negative value denotes 
+            stronger treatment response.
+        </div>
+        <div id="explain11" class="white-popup mfp-hide">
+            <strong>Essentiality of query genes (gene effect scores)</strong> across all cancer types from two genome-wide CRISPR screens: 
+            Broad and Sanger DepMaps. This plot demonstrates the essentiality of the genes in cell viability and thus, 
+            the importance of identifying a compound that perturb them. A score more negative than -1 defines strong essentiality; 
+            i.e., gene knockout effectively inhibits cell viability.
+        </div>
+        <div id="explain12" class="white-popup mfp-hide">
+            <strong>Top drugs that perturb the query genes</strong> at the specified direction. For each query gene, an average change in expression 
+            levels following drug treatment is summarized across cell lines, and a P-value is calculated to indicate the 
+            significance of such changes. An average change across query genes is shown in the <strong>Mean Perturbation Score</strong> 
+            column accompanied by significance inferred by two statistical tests.
+        </div>
+        <div id="explain13" class="white-popup mfp-hide">
+            <strong>Permutation distribution </strong><strong style="color:blue;">(blue curve)</strong> used to calculate <strong>Permutation pVal</strong> 
+            in Panel 2B for the <strong>observed Mean Perturbation Score (black line)</strong>.
+        </div>
+        <div id="explain14" class="white-popup mfp-hide">
+            Pan-cancer distribution of sensitivities to the query drug. A more negative score represents stronger response; 
+            i.e., drug treatment more effectively inhibits cell viability.
+        </div>
+        <div id="explain15" class="white-popup mfp-hide">
+            <strong>Sensitivity to query drug (log-fold change or IC50)</strong> in selected cancer type(s) from two large-scale drug screens: 
+            PRISM (log-fold change, 4686 drugs) and GDSC (IC50, 397 drugs). A more negative score represents stronger response; 
+            i.e., drug treatment more effectively inhibits cell viability.
+        </div>
+        <div id="explain16" class="white-popup mfp-hide">
+            <strong>Correlation coefficients in drug sensitivities</strong> 
+            between query drug and any other drugs in the same screening dataset (PRISM or GDSC).
+        </div>
+        <div id="explain17" class="white-popup mfp-hide">
+            <strong>Correlation in drug sensitivities</strong> between the query drug and any other drugs in the same screening dataset. 
+            A strong positive correlation denotes similar inhibitory effects between two drugs.
+        </div>
+        <div id="explain18" class="white-popup mfp-hide">
+            Network of <strong>the top 10 correlated drugs</strong> as sorted in Panel 3D. 
+            Color and width of edges represent the direction and magnitude of correlations, respectively.
+        </div>
+        <div id="explain19" class="white-popup mfp-hide">
+            Sensitivities of query drug and the drug selected from Panel 3D. Each dot is a cell line of the selected cancer type(s).
+        </div>
+        <div id="explain20" class="white-popup mfp-hide">
+            Similarity in inhibitory effects between <strong>the query drug</strong> and <strong>any gene knockouts</strong> in selected cancer cell lines. 
+            Gene dependency data are derived from two genome-wide CRISPR screens: Broad and Sanger DepMaps.
+        </div> 
+        <div id="explain21" class="white-popup mfp-hide">
+            Correlations in inhibitory effects between <strong>the query drug</strong> and <strong>a gene knockout</strong>. 
+            A strong positive correlation denotes similar inhibitory effect between the query drug and a gene knockout.
+        </div>
+        <div id="explain22" class="white-popup mfp-hide">
+            Network of <strong>the top 10 correlated gene knockouts to the query drug</strong> as sorted in Panel 3H. 
+            Color and width of edges represent the direction and magnitude of correlations, respectively.
+        </div>
+        <div id="explain23" class="white-popup mfp-hide">
+            Sensitivity of query drug and the gene knockout selected from Panel 3H. Each dot is a cell line of the selected cancer type(s). 
+            Gene essentiality is represented by gene effect scores, where a more negative value denotes stronger essentiality.
+        </div>
+        <div id="explain24" class="white-popup mfp-hide">
+            Venn diagram of the biochemical features present in each drug (total number of features, 1047).
+        </div>
+        <div id="explain25" class="white-popup mfp-hide">
+            <strong>Top similar drugs</strong> identified from the 4686 compounds assayed by PRISM. Similarity is measured by <strong>Tanimoto similarity</strong>,
+             where 1 denotes a perfect match and 0 means no overlap in biochemical features.
+        </div>
+        <div id="explain26" class="white-popup mfp-hide">
+            t-SNE plot is generated to display 3-D representations of the 1047 biochemical features across all 4686 compounds assayed by PRISM (grey dots). 
+            The query compound (<font color="red">red dot</font>) is projected to the t-SNE plot by an average of the 3 most 
+            similar drugs (<font color="green">green crosses</font>). The drug selected from Panel 4D is shown in a 
+            <font color="#CCCC00">yellow diamond</font>.
+        </div>
+        <div id="explain27" class="white-popup mfp-hide">
+            This module analyzes data from PRISM and GDSC drug screens. 
+            One drug has to be selected from this table in order to start analysis.
+        </div>
+
+        <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+        <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+        <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+        <script src="assets/js/magnific-popup.js"></script>
+        <script src="assets/js/main.js"></script>
+        <script src="assets/vendor/purecounter/purecounter.js"></script>
+    </body>
+    
+</html>
